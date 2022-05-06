@@ -62,5 +62,5 @@ In the end multiply 2 with the total value
 
 Sum =1 (initialise sum of series)  
 Term = x, power =1  
-next_term= (term*x)/power+1
+next_term= (term*x)/power+1  
 Add term to the previous sum
