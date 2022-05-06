@@ -23,10 +23,11 @@ Here we initialize a pointer of type **"meta_block"**, named freeList pointing t
 
 ~~~C
 /*Initializing the block of memory*/
-void initialize(){
-freeList->size=20000-sizeof(struct block); 
-freeList->free=1;
-freeList->next=NULL;
+void initialize()
+{
+ freeList->size=20000-sizeof(struct block); 
+ freeList->free=1;
+ freeList->next=NULL;
 }
 ~~~
 
@@ -37,14 +38,15 @@ And the first metadata block has no next metadata block yet. So we set next to N
 
 ~~~C
 /*Making way for a new block allocation by splitting a free block -- (Assume first fit algorithm)*/
-void split(struct block *fitting_slot,size_t size){
-struct block *new=(void*)((void*)fitting_slot+size+sizeof(struct block));
-new->size=(fitting_slot->size)-size-sizeof(struct block);
-new->free=1;
-new->next=fitting_slot->next;
-fitting_slot->size=size;
-fitting_slot->free=0;
-fitting_slot->next=new;
+void split(struct block *fitting_slot,size_t size)
+{
+ struct block *new=(void*)((void*)fitting_slot+size+sizeof(struct block));
+ new->size=(fitting_slot->size)-size-sizeof(struct block);
+ new->free=1;
+ new->next=fitting_slot->next;
+ fitting_slot->size=size;
+ fitting_slot->free=0;
+ fitting_slot->next=new;
 }
 ~~~
 
@@ -62,7 +64,8 @@ As you can see from the code, I have set the attributes of both the new and fitt
 The malloc and free functions are named here as ``MyAlloc()`` and ``MyFree()``.
 
 ~~~C
-if(!(freeList->size)){ 
+if(!(freeList->size))
+{ 
  initialize();
  printf("Memory initialized\n");
 }
