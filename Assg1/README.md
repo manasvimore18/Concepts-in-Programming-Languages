@@ -1,4 +1,4 @@
-* ## Write a program to perform efficient exponentiation operation, i.e. x^y. 
+## Write a program to perform efficient exponentiation operation, i.e. x^y. 
 
 Assume that x is an integer. Consider two cases, one where y is an integer and another where y
 is a real number.
@@ -62,5 +62,5 @@ In the end multiply 2 with the total value
 
 Sum =1 (initialise sum of series)  
 Term = x, power =1  
-next_term= (term*x)/power+1  
+next_term= (term*x)/power+1
 Add term to the previous sum
